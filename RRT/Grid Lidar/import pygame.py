@@ -7,20 +7,20 @@ GREEN = (0, 255, 0)
 RED = (255, 0, 0)
  
 # This sets the WIDTH and HEIGHT of each grid location
-WIDTH = 100
-HEIGHT = 100
+WIDTH = 8
+HEIGHT = 8
  
 # This sets the margin between each cell
-MARGIN = 50 
+MARGIN = 1
  
 # Create a 2 dimensional array. A two dimensional
 # array is simply a list of lists.
 grid = []
-for row in range(WIDTH):
+for row in range(100):
     # Add an empty array that will hold each cell
     # in this row
     grid.append([])
-    for column in range(HEIGHT):
+    for column in range(100):
         grid[row].append(0)  # Append a cell
  
 # Set row 1, cell 5 to one. (Remember rows and
@@ -31,7 +31,7 @@ grid[1][5] = 1
 pygame.init()
  
 # Set the HEIGHT and WIDTH of the screen
-WINDOW_SIZE = [1000, 1000]
+WINDOW_SIZE = [100*WIDTH + MARGIN*101, 100*WIDTH + MARGIN*101]
 screen = pygame.display.set_mode(WINDOW_SIZE)
  
 # Set title of screen
@@ -62,8 +62,8 @@ while not done:
     screen.fill(BLACK)
  
     # Draw the grid
-    for row in range(WIDTH):
-        for column in range(HEIGHT):
+    for row in range(100):
+        for column in range(100):
             color = WHITE
             if grid[row][column] == 1:
                 color = GREEN
