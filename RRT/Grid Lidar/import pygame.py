@@ -25,7 +25,7 @@ for row in range(100):
  
 # Set row 1, cell 5 to one. (Remember rows and
 # column numbers start at zero.)
-grid[1][5] = 1
+grid[49][49] = 1
  
 # Initialize pygame
 pygame.init()
@@ -66,7 +66,7 @@ while not done:
         for column in range(100):
             color = WHITE
             if grid[row][column] == 1:
-                color = GREEN
+                color = RED
             pygame.draw.rect(screen,
                              color,
                              [(MARGIN + WIDTH) * column + MARGIN,
